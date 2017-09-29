@@ -3,20 +3,33 @@
     <head>
         <meta charset="utf-8" />
         <title>Minichat</title>
+        <link rel="stylesheet" href="./assets/css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" 
         integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     </head>
  
     <body>
-        <h1>Bienvnue sur Minichat ;)</h1>
-        <div class="md-3" id="content">
-            <!-- Content here -->
-        </div>
-        <div class="container-fluid md-3">
-            ...
+        <div class="container-fluid">
+            <h1 class="mb-4">Bienvnue sur Minichat ;)</h1>
+            <div class="card card-body mb-3" id="content">
+                    <div class="float-left"></div>
+                    <div class="float-right"></div>    
+            </div> 
         </div>
 
-          <!-- Scripts -->
+        <!-- formulaire -->
+        <div  id="footer">
+            <form>
+                <div class="form-group">
+                    <!-- <label for="exampleInputEmail1">Email address</label> -->
+                    <input type="text" class="form-control float-left" id="msg" style="max-width: 95%"
+                    aria-describedby="emailHelp" placeholder="Your message here">
+                </div>
+                <button type="submit" class="btn btn-primary float-right">Send</button>
+            </form>
+        </div>
+
+          <!-- Scripts début -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="/socket.io/socket.io.js"></script>
@@ -27,5 +40,6 @@
                 $('#content').append('<p>',message,'</p>')
             })
         </script>
+        <!-- Scripts fin -->
     </body>
 </html>
