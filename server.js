@@ -1,19 +1,15 @@
-var http = require ('http');
-var fs = require('fs');
+var express = require('express');  
+var app = express();  
+var server = require('http').createServer(app); 
+
+// inclure du css
+app.use(express.static(__dirname + '/assets'));
 
 
-var server = http.createServer(function(req, res) {
-    console.log('Server started');
-    fs.readFile('./index.html','utf-8', function(error, content) {
-        if(error) {
-            res.writeHead(404);
-            throw error;
-        } else {
-            res.writeHead(200, {'Content-Type':'text/html'});
-            res.end(content);
-        }
-    });
+app.get('/', function(req, res, next) {  
+    res.sendFile(__dirname + '/index.html');
 });
+
 
 // on charge socket.io
 var io = require ('socket.io').listen(server);
@@ -36,3 +32,4 @@ io.sockets.on('connection', function (socket) {
 
 // écoute sur le port 5000
 server.listen(5000);
+console.log('Server running at http://127.0.0.1:5000/');

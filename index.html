@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <title>Minichat</title>
-        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" 
         integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     </head>
@@ -17,21 +17,28 @@
             </div> 
         </div>
 
-        <!-- formulaire -->
-        <div  id="footer">
-            <form>
-                <div class="form-group">
-                    <!-- <label for="exampleInputEmail1">Email address</label> -->
-                    <input type="text" class="form-control float-left" id="msg" style="max-width: 95%"
-                    aria-describedby="emailHelp" placeholder="Your message here">
-                </div>
-                <button type="submit" class="btn btn-primary float-right">Send</button>
-            </form>
+        <!-- formulaire --> 
+        <!--  class="col-sm-10" -->
+        <div id="footer">
+                <form class="form-inline">
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="msg" placeholder="Your message here">
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa fa-paper-plane-o fa-lg" aria-hidden="true"></i>
+                                Send
+                            </button>
+                        </div>
+                </form>
         </div>
+            
 
-          <!-- Scripts début -->
+
+        <!-- Scripts début -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://use.fontawesome.com/d5e1014378.js"></script>
         <script src="/socket.io/socket.io.js"></script>
         <script>
             var socket = io.connect('http://localhost:5000');
